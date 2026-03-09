@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Birthday Surprise</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+background:linear-gradient(135deg,#ff6a88,#ff99ac);
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+.container{
+animation:fade 3s;
+}
+
+h1{
+font-size:60px;
+text-shadow:0 0 20px pink;
+}
+
+button{
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+@keyframes fade{
+from{opacity:0}
+to{opacity:1}
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh)}
+100%{transform:translateY(-10vh)}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>A Special Surprise For Daoud 🎁</h1>
+
+<p>Someone who loves you prepared something beautiful...</p>
+
+<button onclick="next()">Open Your Birthday Surprise ❤️</button>
+
+</div>
+
+<script>
+
+function next(){
+window.location.href="wish.html";
+}
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💖";
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},6000);
+
+},300);
+
+</script>
+
+</body>
+</html>
